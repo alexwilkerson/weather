@@ -26,8 +26,16 @@ if (navigator.geolocation) {
 // the weather variable is the JSON object
 function locationAvailable(weather){
     console.log(weather); 
-    var fahrenheit = 1.8 * (weather.main.temp - 273) + 32;
-    document.body.innerText = weather.name + " " + Math.floor(fahrenheit) + " degrees";
+    var weathericon = document.getElementById("weather-icon");
+    var temp = parseFloat(kelvinToFahrenheit(weather.main.temp).toFixed(2));
+    var docHTML = temp + "&deg;F<br>";
+    docHTML += "<i class=\"wi wi-owm-" + weather.weather[0].id + "\"></i>";
+    docHTML += " " + weather.weather[0].description;
+    weathericon.innerHTML = docHTML;
+}
+
+function kelvinToFahrenheit(k){
+    return (k * 1.8) - 459.67;
 }
 
 // This is the function where all of the js goes if the
