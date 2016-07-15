@@ -16,7 +16,7 @@ if (navigator.geolocation) {
         }
         xhr.open("GET", url, true);
         xhr.send();
-   });
+   }, showError);
 } else {
     locationUnavailable();
 }
@@ -33,5 +33,24 @@ function locationAvailable(weather){
 // This is the function where all of the js goes if the
 // site is unable to locate the user
 function locationUnavailable() {
-    document.body.innerText = "Cannot find your location.";     
+    document.body.innerText = "Geolocation is not supported by this browser.";
 }
+
+function showError(error)
+  {
+  switch(error.code) 
+    {
+    case error.PERMISSION_DENIED:
+      document.body.innerHTML="User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      document.body.innerHTML="Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      document.body.innerHTML="The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      document.body.innerHTML="An unknown error occurred."
+      break;
+    }
+  }
