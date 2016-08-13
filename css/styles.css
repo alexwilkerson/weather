@@ -1,3 +1,66 @@
-#weather-icon {
-  font-size: 4em;
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: -webkit-radial-gradient(circle, #27EDE0, #25C0C8);
+  background: radial-gradient(circle, #27EDE0, #25C0C8);
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.weather {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background-color: #FDFF80;
+  border-radius: 50%;
+  background-size: 250px 250px;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.degrees {
+  cursor: pointer;
+  font-size: 5em;
+}
+
+.weather-icon {
+  display: block;
+  color: #FF6435;
+  font-size: 100px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.degrees {
+  position: absolute;
+  font-size: 45px;
+  top: 10px;
+  margin-left: -5px;
+  font-weight: bold;
+}
+
+.description {
+  display: block;
+  color: #FF6435;
+}
+
+.temp {
+  font-size: 100px;
+}
+
+.totalTemp {
+  position: relative;
+  padding: 0;
+  color: rbga(0, 0, 0, 0.9);
 }
