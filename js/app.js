@@ -1,5 +1,5 @@
 $(document).ready(function(){
-TweenMax.set(".weather", {y:-400});
+TweenMax.set(".weather", {y:-100%});
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
         var apikey = "cf6408f51645e3e591770caea53ce720";
