@@ -41,7 +41,7 @@ function locationAvailable(weather){
     $(".temp").html(tempF);
     $(".degrees").html(FAHRENHEIT);
     $(".description").html(desc);
-    TweenMax.to(".weather", 0.5, {y:0});
+    TweenMax.to(".weather", 0.5, {y:0, ease: Elastic.easeOut.config(1, 0.3)});
 
     $(".degrees").on("click", convertDegrees);
 
