@@ -1,5 +1,5 @@
 $(document).ready(function(){
-TweenMax.set(".weather", {y:-100%});
+TweenMax.set(".weather", {y:-1000});
 if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
         var apikey = "cf6408f51645e3e591770caea53ce720";
@@ -41,6 +41,7 @@ function locationAvailable(weather){
     $(".temp").html(tempF);
     $(".degrees").html(FAHRENHEIT);
     $(".description").html(desc);
+    TweenMax.to(".weather", 0.5, {y:0});
 
     $(".degrees").on("click", convertDegrees);
 
